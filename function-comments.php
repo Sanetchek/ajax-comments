@@ -39,20 +39,18 @@ add_action( 'wp_enqueue_scripts', 'custom_comments_scripts');
 
 function custom_comments_scripts()
 {
-    // Styles
-    wp_enqueue_style('comments-form', get_template_directory_uri() . '/comments/css/comments-form.min.css');
+    if ( comments_open() || get_comments_number() ) {
+        // Styles
+        wp_enqueue_style('comments-form', get_template_directory_uri() . '/comments/css/comments-form.min.css');
 
 
-    // Scripts
-    wp_enqueue_script('jquery');
-    wp_enqueue_script('jquery-form');
-    wp_localize_script( 'ajaxurl', 'ajax_var', // добавим объект с глобальными JS переменными
-        array('url' => admin_url('admin-ajax.php')) // и сунем в него путь до AJAX обработчика
-    );
-    wp_enqueue_script( 'comments', get_template_directory_uri() . '/comments/js/comments.min.js', array('jquery'), null, true );
+        // Scripts
+        wp_enqueue_script('jquery');
+        wp_enqueue_script( 'comments', get_template_directory_uri() . '/comments/js/comments.min.js', array('jquery'), null, true );
 
-    // добавим comment_reply для ответа на комментарии
-    wp_enqueue_script( 'comment-reply' );
+        // добавим comment_reply для ответа на комментарии
+        wp_enqueue_script( 'comment-reply' );
+    }
 }
 
 
