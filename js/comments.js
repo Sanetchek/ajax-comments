@@ -75,7 +75,11 @@ jQuery(document).ready(function ($) {
 
 
             // Submitting comment
-            commentform.ajaxSubmit({
+            $.ajax({ 
+                url: action,
+                type: 'post',
+                data: inputs,
+
                 beforeSend: function () {
                     // Display the loading state
                     commentform.find('p').slideUp();
@@ -135,12 +139,8 @@ jQuery(document).ready(function ($) {
                             commentform.prepend('<div id="comment-status" style="font-size: 12px;" >You are posting comments too quickly. Slow down.</div>');
                         }
                     }
-                },
-                clearForm: true,
-                url: action,
-                data: inputs
+                }                
             });
-            return false;
         })
 
     });

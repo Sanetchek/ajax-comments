@@ -1,10 +1,9 @@
 /* Comment form */
 div#comments {
-    font-family: 'OswaldLight', 'Helvetica', sans-serif;
 }
 
 div#comments h2 {
-    font-family: 'OswaldExtraLight', Helvetica, sans-serif;
+    font-weight: 300;
     font-weight: unset;
     font-size: 1em;
 }
@@ -17,6 +16,7 @@ div#comments li {
 div#comments li > div {
     position: relative;
     min-height: 60px;
+    padding-bottom: 10px;
 }
 
 div#comments .children li {
@@ -25,7 +25,7 @@ div#comments .children li {
 }
 
 .comment-author.vcard {
-    font-family: 'OswaldBold', 'Helvetica', sans-serif;
+    font-weight: bold;
     display: inline-block;
     text-transform: uppercase;
 }
@@ -47,7 +47,7 @@ div#comments .children li {
 }
 
 #comments .reply {
-    font-family: 'OswaldBold', 'Helvetica', sans-serif;
+    font-weight: bold;
     font-size: 0.9em;
     position: absolute;
     bottom: 0;
@@ -62,8 +62,7 @@ div#respond {
 
 #respond h3#reply-title {
     font-size: 1em;
-    font-family: 'OswaldBold', 'Helvetica', sans-serif;
-    font-weight: normal;
+    font-weight: bold;
 }
 
 #respond a#cancel-comment-reply-link {
@@ -80,24 +79,19 @@ div#respond {
     width: 96%;
     height: 70px;
     padding: 2% 2% 5% 2%;
-    font-family: 'OswaldLight', 'Helvetica', sans-serif;
+    font-weight: 300;
     font-size: 1em;
 }
 
 #respond p.form-submit {
-    font-family: 'OswaldLight', 'Helvetica', sans-serif;
-    padding: 0;
-    position: absolute;
-    bottom: 5px;
-    right: -1px;
+    font-weight: 300;
+    padding: 15px 0 0 0;
     width: 30%;
 }
 
 #respond input#submit {
     width: 100%;
-    font-family: 'OswaldBold', 'Helvetica', sans-serif;
-    background: #2c6247;
-    color: #fff;
+    font-weight: bold;
 }
 
 #respond p.comment-form-cookies-consent {
